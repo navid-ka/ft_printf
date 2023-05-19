@@ -20,35 +20,35 @@ OBJECTS_BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
 
 # ANSI escape codes for colors
 COLOR_RESET = \033[0m
-COLOR_CYAN = \033[32m
+COLOR = \033[32m
 
 # Kaomojis
 KAOMOJI_COMPILE = (╮°-°)╮┳━┳
 KAOMOJI_SUCCESS = (ノಠ益ಠ)ノ彡┻━┻
 
 %.o : %.c
-	@printf "\r$(COLOR_CYAN)Compiling Libft: $(KAOMOJI_COMPILE)$(COLOR_RESET) $< "
+	@printf "\r$(COLOR)Compiling Libft: $(KAOMOJI_COMPILE)$(COLOR_RESET) $< "
 	@cc -c ${CFLAGS} $< -o $@
 
 ${NAME}: ${OBJECTS} 
 	@${LIBF} ${NAME} ${OBJECTS}
-	@printf "$(COLOR_CYAN)Libft library compiled successfully! $(COLOR_RESET)\n"
+	@printf "$(COLOR)Libft library compiled successfully! $(COLOR_RESET)\n"
 
 all: ${NAME}
 
 fclean: clean
 	@rm -f ${NAME}
-	@printf "$(COLOR_CYAN)Cleaned Libft directory! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
+	@printf "$(COLOR)Cleaned Libft directory! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
 
 clean:
 	@echo "$(KAOMOJI_SUCCESS)"
 	@rm -f ${OBJECTS} ${OBJECTS_BONUS}
-	@printf "$(COLOR_CYAN)Cleaned object files! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
+	@printf "$(COLOR)Cleaned object files! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
 
 re: fclean all
 
 bonus:  ${OBJECTS_BONUS} 
 	@${LIBF} ${NAME} ${OBJECTS_BONUS}
-	@printf "$(COLOR_CYAN)Bonus objects added to Libft library! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
+	@printf "$(COLOR)Bonus objects added to Libft library! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
 
 .PHONY: clean all fclean re bonus
