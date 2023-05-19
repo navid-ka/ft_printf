@@ -6,11 +6,13 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/19 14:05:13 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/19 15:20:29 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int ft_conversion(char arg, va_list args); //cspdiuxX
 
 int	ft_printf(char const *s, ...)
 {
