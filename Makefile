@@ -14,13 +14,14 @@ all: ${NAME}
 	gcc -c ${CFLAGS} $< -o $@ 
 
 fclean: clean
-	rm -f ${NAME}
-	rm -f ./libft/libft.a
+	@make -C libft/ clean
+	@rm -f ${NAME}
+	@rm -f libft/libft.a
 
 clean:
-	rm -f *.o
-	rm -f ./libft/*.o
-
+	@make -C libft/ clean
+	@rm -f ${OBJECTS}
+	@rm -f libft/*.o
 
 re: fclean all
 
