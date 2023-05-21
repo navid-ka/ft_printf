@@ -6,49 +6,46 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/21 21:02:42 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/21 23:12:27 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 //cspdiuxX
-int ft_conversion(char *s, va_list args)
+static int	ft_check_format(const char *format, va_list args)
 {
 	int	check;
 
 	check = 0;
-	while (*s++)
-	{
-		if (s == "%c")
-			check = ft_putchar_fd(va_arg(args, int), 1);
-		else if (s == "%s")
-			check = ft_putstr_fd(va_arg(args, int), 1);
-	
-	}
+	if (*format == 'c')
+		check += ft_printc((char)va_arg(args, int));
+
 	return (check);
 }
 
-int	ft_printf(char const *s, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int		print;
+	va_list			args;
+	unsigned int	i;
 
-	va_start(args, s);
-	print = ft_conversion(s, args);
+	i = 0;
+	va_start(args, format);
+
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (ft_strchr("cspdiuxX", *format))
+				i += ft_check_format(format, args);
+			else if (*format == '%')
+				i += ft_printc('%');
+		}
+		else
+			i += ft_printc(*format);
+		format++;
+	}
 	va_end(args);
-	return (print);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char a;
-
-	a = 'a';
-
-	ft_printf("%c", a);
-
-	return (0);
-
+	return (i);
 }
