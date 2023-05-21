@@ -2,7 +2,7 @@ NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
 LIB = -L./libft -lft
 LIBF = ar rc
-OBJECTS = ft_printf.o
+OBJECTS = ft_printf.o ft_printc.o
 COLOR_RESET = \033[0m
 COLOR = \033[32m
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
@@ -15,7 +15,7 @@ ${NAME}: ${OBJECTS}
 
 all: ${NAME}
 
-%.o : %.c
+%.o: %.c
 	@printf "\r$(COLOR)Compiling ft_printf: $(COLOR_RESET)$< \n"
 	@cc -c ${CFLAGS} $< -o $@
 
@@ -31,4 +31,8 @@ clean:
 
 re: fclean all
 
-.PHONY: clean all fclean re
+main: ${NAME} main.c
+	@cc main.c ${NAME} -I./libft -L./libft -lft -o myprogram
+	@printf "$(COLOR)Main program compiled successfully!$(COLOR_RESET)\n"
+
+.PHONY: clean all fclean re main
