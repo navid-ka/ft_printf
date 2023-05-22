@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:37:16 by bifrost           #+#    #+#             */
-/*   Updated: 2023/05/22 20:08:07 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:44:43 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_printc(char c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+ 	write (1, &c, 1);
+    return (1);
 }

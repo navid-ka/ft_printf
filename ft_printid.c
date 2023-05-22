@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 20:26:59 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:46:16 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,11 @@
 
 int	ft_printid(int nb)
 {
-	int	i;
+    char	*str;
+    int		len;
 
-	i = 0;
-	ft_putnbr_fd(nb, 1);
-	if (nb == -2147483648)
-		return (11);
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
-		i++;
-	if (nb >= 9)
-	{
-		nb /= 10;
-		i++;
-	}
-	return (i);
+    str = ft_itoa(nb);
+    len = ft_prints(str);
+    free(str);
+    return (len);
 }

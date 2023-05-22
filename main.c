@@ -11,9 +11,11 @@ int	main(void)
 	a = 'a';
 	ft_printf("%c Hola \n", a);
 	ft_printf("flag sc %s %c \n", s, a);
-	ft_printf("flag PUUU %p \n", &x);
+	ft_printf(" %p %p \n", 0, 0);
+	printf(" %p %p \n", 0, 0);
 	printf("flag PUUU %p \n", &x);
 	ft_printf("flag PUUU %d \n", -10);
 	printf("flag PUUU %d \n", -10);
+	
 	return (0);
 }

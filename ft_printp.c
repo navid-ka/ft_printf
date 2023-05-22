@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 20:08:15 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:58:05 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ int	ft_print_pointer_hexa(unsigned long int ptr)
 int	ft_printp(unsigned long int ptr)
 {
 	int	i;
-
+	
+	if (ptr == 0)
+		return (0);
 	i = 2;
 	if (write(1, "0x", 2) == -1)
 		return (-1);

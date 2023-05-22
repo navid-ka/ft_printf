@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prints.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:50:11 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 20:08:18 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:43:25 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 int	ft_prints(char *s)
 {
-	unsigned int	i;
+    int	len;
 
-	i = 0;
-	ft_putstr_fd(s, 1);
-	while (*s++)
-		i++;
-	return (i);
+    if (!s)
+    {
+        write (1, "(null)", 6);
+        return (6);
+    }
+    len = ft_strlen(s); 
+    write (1, s, len);
+    return (len);
 }
