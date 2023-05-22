@@ -3,7 +3,9 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-int ft_printc(char c);
+int	ft_printc(char c);
+int	ft_prints(char *s);
+int	ft_printp(void *ptr);
 int	ft_printf(char const *s, ...);
 
 #endif

@@ -2,7 +2,9 @@ NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
 LIB = -L./libft -lft
 LIBF = ar rc
-OBJECTS = ft_printf.o ft_printc.o
+OBJECTS = ft_printf.o ft_printc.o ft_prints.o \
+	ft_printp.o
+
 COLOR_RESET = \033[0m
 COLOR = \033[32m
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
