@@ -6,12 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 17:27:36 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 20:20:23 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
+#include "includes/ft_printf.h"
 //cspdiuxX
 static int	ft_check_format(const char *format, va_list args)
 {
@@ -25,7 +24,7 @@ static int	ft_check_format(const char *format, va_list args)
 	else if (*format == 'p')
 		check += ft_printp(va_arg(args, unsigned long));
 	else if (*format == 'd' || *format == 'i')
-		check += ft_printp(va_arg(args, int));
+		check += ft_printid(va_arg(args, int));
 	return (check);
 }
 
