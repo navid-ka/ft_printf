@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:50:11 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 21:43:25 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 23:00:35 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_prints(char *s)
 {
-    int	len;
+	int	len;
 
-    if (!s)
-    {
-        write (1, "(null)", 6);
-        return (6);
-    }
-    len = ft_strlen(s); 
-    write (1, s, len);
-    return (len);
+	if (!s)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
+	len = ft_strlen(s); 
+	write (1, s, len);
+	return (len);
 }
