@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 23:46:14 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/23 00:00:18 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static int	ft_check_format(const char *format, va_list args)
 	else if (*format  == 'x' || *format  == 'X')
 		{
 			if (*format  == 'x')
-				return (ft_printhex(va_arg(args, unsigned int), "0123456789abcdef"));
+				check += ft_printhex(va_arg(args, unsigned int), "0123456789abcdef");
 			if (*format  == 'X')
-				return (ft_printhex(va_arg(args, unsigned int), "0123456789ABCDEF"));
+				check += ft_printhex(va_arg(args, unsigned int), "0123456789ABCDEF");
 		}
 	return (check);
 }
