@@ -6,12 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:50:11 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 13:07:52 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:32:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	ft_prints(char *s)
 {
