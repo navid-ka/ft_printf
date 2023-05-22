@@ -15,7 +15,7 @@ KAOMOJI_REMOVE = (ノಠ益ಠ)ノ彡┻━┻
 
 ${NAME}: ${OBJECTS}
 	make -C $(LIB) --no-print-directory
-	cp inc/libft/libft.a $(NAME)
+	cp includes/libft/libft.a $(NAME)
 	${LIBF} ${NAME} ${OBJECTS}
 	@printf "$(COLOR)ft_printf library compiled successfully! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
 
