@@ -18,7 +18,7 @@ ${NAME}: ${OBJECTS}
 all: ${NAME}
 
 %.o: %.c
-	@printf "\r$(COLOR)Compiling ft_printf: $(COLOR_RESET)$< \n"
+	@printf "\r$(COLOR)Compiling ft_printf: $(COLOR_RESET) $< \n"
 	@cc -c ${CFLAGS} $< -o $@
 
 fclean: clean
@@ -34,7 +34,7 @@ clean:
 re: fclean all
 
 main: ${NAME} main.c
-	@cc main.c ${NAME} -I./libft -L./libft -lft -o myprogram
+	@cc main.c ${NAME} -I./libft -L./libft -lft -o printf
 	@printf "$(COLOR)Main program compiled successfully!$(COLOR_RESET)\n"
 
 .PHONY: clean all fclean re main
