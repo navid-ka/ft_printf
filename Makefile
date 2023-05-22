@@ -10,14 +10,14 @@ COLOR = \033[32m
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
 KAOMOJI_REMOVE = (ノಠ益ಠ)ノ彡┻━┻
 
-${NAME}: ${OBJECTS}
+${NAME}: ${OBJECTS} ft_printf.h
 	@make -C ./libft --no-print-directory
 	@${LIBF} ${NAME} ${OBJECTS}
 	@printf "$(COLOR)ft_printf library compiled successfully! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
 
 all: ${NAME}
 
-%.o: %.c
+%.o: %.c ft_printf.h
 	@printf "\r$(COLOR)Compiling ft_printf: $(COLOR_RESET) $< \n"
 	@cc -c ${CFLAGS} $< -o $@
 
