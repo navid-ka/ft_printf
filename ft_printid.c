@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printc.c                                        :+:      :+:    :+:   */
+/*   ft_printid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 21:37:16 by bifrost           #+#    #+#             */
-/*   Updated: 2023/05/22 20:08:07 by nkeyani-         ###   ########.fr       */
+/*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
+/*   Updated: 2023/05/22 20:26:59 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-int	ft_printc(char c)
+int	ft_printid(int nb)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	ft_putnbr_fd(nb, 1);
+	if (nb == -2147483648)
+		return (11);
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		i++;
+	if (nb >= 9)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
 }

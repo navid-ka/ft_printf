@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -I $(INC)
 PRINTF = ft_printf.h
 LIBF = ar rcs
 OBJECTS = ft_printf.o ft_printc.o ft_prints.o \
-	ft_printp.o
+	ft_printp.o ft_printid.o
 
 COLOR_RESET = \033[0m
 COLOR = \033[32m
@@ -38,7 +38,7 @@ clean:
 re: fclean all
 
 main: ${NAME} main.c
-	@cc main.c ${NAME} -I./libft -L./libft -lft -o printf
+	@cc main.c ${NAME} -I./includes/libft -L./includes/libft -lft -o printf
 	@printf "$(COLOR)Main program compiled successfully!$(COLOR_RESET)\n"
 
 .PHONY: clean all fclean re main
