@@ -6,13 +6,12 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 23:12:08 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 23:46:14 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//cspdiuxX
 static int	ft_check_format(const char *format, va_list args)
 {
 	int	check;
@@ -28,6 +27,13 @@ static int	ft_check_format(const char *format, va_list args)
 		check += ft_printid(va_arg(args, int));
 	else if (*format  == 'u')
         return (ft_printu(va_arg(args, unsigned int)));
+	else if (*format  == 'x' || *format  == 'X')
+		{
+			if (*format  == 'x')
+				return (ft_printhex(va_arg(args, unsigned int), "0123456789abcdef"));
+			if (*format  == 'X')
+				return (ft_printhex(va_arg(args, unsigned int), "0123456789ABCDEF"));
+		}
 	return (check);
 }
 
