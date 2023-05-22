@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -I $(INC)
 PRINTF = ft_printf.h
 LIBF = ar rcs
 OBJECTS = ft_printf.o ft_printc.o ft_prints.o \
-	ft_printp.o ft_printid.o
+	ft_printp.o ft_printid.o ft_printu.o
 
 COLOR_RESET = \033[0m
 COLOR = \033[32m

@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 21:58:05 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 23:01:34 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ int	ft_printp(unsigned long int ptr)
 {
 	int	i;
 	
+	if (!ptr)
+	{
+		write (1, "(nill)", 6);
+		return (6);
+	}
 	if (ptr == 0)
 		return (0);
 	i = 2;

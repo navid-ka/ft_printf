@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 22:17:29 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 23:12:08 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static int	ft_check_format(const char *format, va_list args)
 		check += ft_printp(va_arg(args, unsigned long));
 	else if (*format == 'd' || *format == 'i')
 		check += ft_printid(va_arg(args, int));
+	else if (*format  == 'u')
+        return (ft_printu(va_arg(args, unsigned int)));
 	return (check);
 }
 
