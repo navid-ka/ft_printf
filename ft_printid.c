@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 21:46:16 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 22:34:16 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_printid(int nb)
 {
-    char	*str;
-    int		len;
+	char	*str;
+	int		len;
 
-    str = ft_itoa(nb);
-    len = ft_prints(str);
-    free(str);
-    return (len);
+	str = ft_itoa(nb);
+	len = ft_prints(str);
+	free(str);
+	return (len);
 }
