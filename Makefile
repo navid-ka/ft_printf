@@ -6,7 +6,8 @@ CFLAGS = -Wall -Wextra -Werror -I $(INC)
 PRINTF = ft_printf.h
 LIBF = ar rcs
 OBJECTS = ft_printf.o ft_printc.o ft_prints.o \
-	ft_printp.o ft_printid.o ft_printu.o
+	ft_printp.o ft_printid.o ft_printu.o \
+	ft_printhex.o
 
 COLOR_RESET = \033[0m
 COLOR = \033[32m
@@ -26,14 +27,14 @@ all: ${NAME}
 	cc -c ${CFLAGS} $< -o $@
 
 fclean: clean
-	make fclean -C $(LIB) --no-print-directory
-	rm -rf ${NAME}
-	rm -rf printf
+	@make fclean -C $(LIB) --no-print-directory
+	@rm -rf ${NAME}
+	@rm -rf printf
 	@printf "$(COLOR)Cleaned ft_printf and libft directories! $(KAOMOJI_REMOVE)$(COLOR_RESET)\n"
 
 clean:
-	make fclean -C $(LIB) --no-print-directory
-	rm -f ${OBJECTS}
+	@make fclean -C $(LIB) --no-print-directory
+	@rm -f ${OBJECTS}
 	@printf "$(COLOR)Cleaned object files! $(KAOMOJI_REMOVE)$(COLOR_RESET)\n"
 
 re: fclean all

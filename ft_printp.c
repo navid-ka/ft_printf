@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 23:01:34 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 23:50:59 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_rev(char *arr, int size)
 	}
 }
 
-int	ft_lenght_hexa(unsigned long int ptr)
+static int	ft_lenght_hexa(unsigned long int ptr)
 {
 	int	lenght;
 
@@ -37,7 +37,7 @@ int	ft_lenght_hexa(unsigned long int ptr)
 	return (lenght);
 }
 
-int	ft_print_pointer_hexa(unsigned long int ptr)
+static int	ft_print_pointer_hexa(unsigned long int ptr)
 {
 	unsigned long int	i;
 	int					hexa_lenght;
@@ -63,11 +63,6 @@ int	ft_printp(unsigned long int ptr)
 {
 	int	i;
 	
-	if (!ptr)
-	{
-		write (1, "(nill)", 6);
-		return (6);
-	}
 	if (ptr == 0)
 		return (0);
 	i = 2;
