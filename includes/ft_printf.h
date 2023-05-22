@@ -7,6 +7,7 @@ int	ft_printc(char c);
 int	ft_prints(char *s);
 int	ft_printp(unsigned long int ptr);
 int	ft_printid(int nb);
+int	ft_printu(unsigned int nb);
 int	ft_printf(char const *s, ...);
 
 #endif
