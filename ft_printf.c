@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/21 23:12:27 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 13:10:50 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ static int	ft_check_format(const char *format, va_list args)
 	check = 0;
 	if (*format == 'c')
 		check += ft_printc((char)va_arg(args, int));
-
+	else if (*format == 's')
+		check += ft_prints(va_arg(args, char *));
+	else if (*format == 'p')
+		check += ft_prints(va_arg(args, char *));
 	return (check);
 }
 
@@ -31,7 +34,6 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(args, format);
-
 	while (*format != '\0')
 	{
 		if (*format == '%')

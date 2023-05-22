@@ -4,10 +4,11 @@
 int	main(void)
 {
 	char a;
+	char s[] = "Hola mundo";
 
 	a = 'a';
-
-	ft_printf("%c Hola", a);
+	ft_printf("%c Hola \n", a);
+	ft_printf("flag sc %s %c \n", s, a);
 
 	return (0);
 
