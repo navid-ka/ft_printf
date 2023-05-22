@@ -18,11 +18,9 @@ OBJECTS_BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
 	ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o \
 	ft_lstclear.o ft_lstiter.o ft_lstmap.o
 
-# ANSI escape codes for colors
 COLOR_RESET = \033[0m
 COLOR = \033[32m
 
-# Kaomojis
 KAOMOJI_COMPILE = (╮°-°)╮┳━┳
 KAOMOJI_SUCCESS = (ノಠ益ಠ)ノ彡┻━┻
 
@@ -38,12 +36,11 @@ all: ${NAME}
 
 fclean: clean
 	@rm -f ${NAME}
-	@printf "$(COLOR)Cleaned Libft directory! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
+
 
 clean:
-	@echo "$(KAOMOJI_SUCCESS)"
 	@rm -f ${OBJECTS} ${OBJECTS_BONUS}
-	@printf "$(COLOR)Cleaned object files! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
+
 
 re: fclean all
 

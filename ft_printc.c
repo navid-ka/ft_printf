@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:37:16 by bifrost           #+#    #+#             */
-/*   Updated: 2023/05/21 23:07:58 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/22 18:31:44 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int ft_printc(char c)
 {
