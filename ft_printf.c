@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 20:20:23 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:17:29 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "ft_printf.h"
+
 //cspdiuxX
 static int	ft_check_format(const char *format, va_list args)
 {
@@ -35,6 +36,7 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(args, format);
+
 	while (*format != '\0')
 	{
 		if (*format == '%')

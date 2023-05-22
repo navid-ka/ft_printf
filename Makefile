@@ -28,6 +28,7 @@ all: ${NAME}
 fclean: clean
 	make fclean -C $(LIB) --no-print-directory
 	rm -rf ${NAME}
+	rm -rf printf
 	@printf "$(COLOR)Cleaned ft_printf and libft directories! $(KAOMOJI_REMOVE)$(COLOR_RESET)\n"
 
 clean:
