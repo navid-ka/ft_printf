@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 13:10:50 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:31:54 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_check_format(const char *format, va_list args)
 	else if (*format == 's')
 		check += ft_prints(va_arg(args, char *));
 	else if (*format == 'p')
-		check += ft_prints(va_arg(args, char *));
+		check += ft_printp(va_arg(args, unsigned int));
 	return (check);
 }
 
