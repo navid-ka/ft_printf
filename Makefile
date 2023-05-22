@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-INC = inc/
+INC = includes/
 LIB = $(INC)libft/
 LIBA = $(LIB)libft.a
 CFLAGS = -Wall -Wextra -Werror -I $(INC)
