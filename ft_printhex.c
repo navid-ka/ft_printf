@@ -6,20 +6,22 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 23:36:52 by bifrost           #+#    #+#             */
-/*   Updated: 2023/05/23 13:43:37 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:28:06 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static void	ft_rev(char *arr, int size)
+static int	ft_rev(char *arr, int size)
 {
 	size--;
 	while (size >= 0)
 	{
-		write(1, &arr[size], 1);
+		if (write(1, &arr[size], 1) == -1)
+			return (-1);
 		size--;
 	}
+	return (1);
 }
 
 static int	ft_lenght_hexa(unsigned int n)
@@ -40,6 +42,7 @@ static int	ft_lenght_hexa(unsigned int n)
 static int	ft_hex(unsigned int n, char *base)
 {
 	unsigned int		i;
+	int					j;
 	unsigned int		hexa_lenght;
 	char				*out;
 
@@ -54,8 +57,10 @@ static int	ft_hex(unsigned int n, char *base)
 		n /= 16;
 	}
 	out[hexa_lenght] = '\0';
-	ft_rev(out, hexa_lenght);
+	j = ft_rev(out, hexa_lenght);
 	free(out);
+	if (j == -1)
+		return (-1);
 	return (hexa_lenght);
 }
 
@@ -65,7 +70,11 @@ int	ft_printhex(unsigned int n, char *base)
 
 	i = 0;
 	if (n == 0)
+	{
+		if (write(1, "0", 1) == -1)
+			return (-1);
 		return (1);
+	}
 	i += ft_hex(n, base);
 	return (i);
 }
