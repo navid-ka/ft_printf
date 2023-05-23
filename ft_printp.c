@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 17:52:25 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:04:06 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,11 @@ int	ft_printp(unsigned long ptr)
 			return (-1);
 		return (3);
 	}
-	i = 2;
 	if (write(1, "0x", 2) == -1)
 		return (-1);
-	if (ft_print_pointer_hexa(ptr) == -1)
-	{
+	i = 2;
+	i += ft_print_pointer_hexa(ptr);
+	if (i == 1)
 		return (-1);
-	}
-	else
-		i++;
 	return (i);
 }

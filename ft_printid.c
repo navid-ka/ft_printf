@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 16:42:53 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:06:51 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_printid(int nb)
 	int		len;
 
 	str = ft_itoa(nb);
+	if (str == NULL)
+		return (-1);
 	len = ft_prints(str);
 	free(str);
 	if (len == -1)

@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 16:31:58 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:07:04 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	ft_printu(unsigned int nb)
 	int		len;
 
 	str = ft_uitoa(nb);
+	if (str == NULL)
+		return (-1);
 	len = ft_prints(str);
 	free(str);
 	if (len == -1)
