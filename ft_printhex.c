@@ -3,24 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 23:36:52 by bifrost           #+#    #+#             */
-/*   Updated: 2023/05/23 00:21:03 by bifrost          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "includes/ft_printf.h"
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printp.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 23:35:50 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:43:37 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +62,10 @@ static int	ft_hex(unsigned int n, char *base)
 int	ft_printhex(unsigned int n, char *base)
 {
 	int	i;
-	
+
 	i = 0;
 	if (n == 0)
-		return (0);
+		return (1);
 	i += ft_hex(n, base);
 	return (i);
 }

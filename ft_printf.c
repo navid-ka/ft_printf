@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 00:00:18 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:20:51 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,17 @@ static int	ft_check_format(const char *format, va_list args)
 		check += ft_printp(va_arg(args, unsigned long));
 	else if (*format == 'd' || *format == 'i')
 		check += ft_printid(va_arg(args, int));
-	else if (*format  == 'u')
-        return (ft_printu(va_arg(args, unsigned int)));
-	else if (*format  == 'x' || *format  == 'X')
-		{
-			if (*format  == 'x')
-				check += ft_printhex(va_arg(args, unsigned int), "0123456789abcdef");
-			if (*format  == 'X')
-				check += ft_printhex(va_arg(args, unsigned int), "0123456789ABCDEF");
-		}
+	else if (*format == 'u')
+		return (ft_printu(va_arg(args, unsigned int)));
+	else if (*format == 'x' || *format == 'X')
+	{
+		if (*format == 'x')
+			check += ft_printhex(va_arg(args, unsigned int), \
+			"0123456789abcdef");
+		if (*format == 'X')
+			check += ft_printhex(va_arg(args, unsigned int), \
+			"0123456789ABCDEF");
+	}
 	return (check);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 23:50:59 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:44:38 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_rev(char *arr, int size)
 	}
 }
 
-static int	ft_lenght_hexa(unsigned long int ptr)
+static int	ft_lenght_hexa(unsigned long ptr)
 {
 	int	lenght;
 
@@ -37,7 +37,7 @@ static int	ft_lenght_hexa(unsigned long int ptr)
 	return (lenght);
 }
 
-static int	ft_print_pointer_hexa(unsigned long int ptr)
+static int	ft_print_pointer_hexa(unsigned long ptr)
 {
 	unsigned long int	i;
 	int					hexa_lenght;
@@ -59,10 +59,10 @@ static int	ft_print_pointer_hexa(unsigned long int ptr)
 	return (hexa_lenght);
 }
 
-int	ft_printp(unsigned long int ptr)
+int	ft_printp(unsigned long ptr)
 {
 	int	i;
-	
+
 	if (ptr == 0)
 		return (0);
 	i = 2;
