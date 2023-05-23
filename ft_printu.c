@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printu.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/22 23:19:08 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/05/23 16:31:58 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static char	*ft_uitoa(unsigned int n)
 	return (arr);
 }
 
-
 int	ft_printu(unsigned int nb)
 {
 	char	*str;
@@ -57,5 +56,7 @@ int	ft_printu(unsigned int nb)
 	str = ft_uitoa(nb);
 	len = ft_prints(str);
 	free(str);
+	if (len == -1)
+		return (-1);
 	return (len);
 }
