@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 15:29:33 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:52:25 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	ft_rev(char *arr, int size)
 	}
 	return (1);
 }
-
 
 static int	ft_lenght_hexa(unsigned long ptr)
 {
@@ -78,6 +77,11 @@ int	ft_printp(unsigned long ptr)
 	i = 2;
 	if (write(1, "0x", 2) == -1)
 		return (-1);
-	i += ft_print_pointer_hexa(ptr);
+	if (ft_print_pointer_hexa(ptr) == -1)
+	{
+		return (-1);
+	}
+	else
+		i++;
 	return (i);
 }
