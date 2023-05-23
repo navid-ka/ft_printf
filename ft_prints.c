@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:50:11 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 13:28:20 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:24:41 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	ft_prints(char *s)
 
 	if (!s)
 	{
-		write (1, "(null)", 6);
+		if (write (1, "(null)", 6) == -1)
+			return (-1);
 		return (6);
 	}
 	len = ft_strlen(s);

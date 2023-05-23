@@ -6,21 +6,24 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:12:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 13:44:38 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:29:33 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static void	ft_rev(char *arr, int size)
+static int	ft_rev(char *arr, int size)
 {
 	size--;
 	while (size >= 0)
 	{
-		write(1, &arr[size], 1);
+		if (write(1, &arr[size], 1) == -1)
+			return (-1);
 		size--;
 	}
+	return (1);
 }
+
 
 static int	ft_lenght_hexa(unsigned long ptr)
 {
@@ -41,6 +44,7 @@ static int	ft_print_pointer_hexa(unsigned long ptr)
 {
 	unsigned long int	i;
 	int					hexa_lenght;
+	int					j;
 	char				*out;
 
 	i = 0;
@@ -54,8 +58,10 @@ static int	ft_print_pointer_hexa(unsigned long ptr)
 		ptr /= 16;
 	}
 	out[hexa_lenght] = '\0';
-	ft_rev(out, hexa_lenght);
+	j = ft_rev(out, hexa_lenght);
 	free(out);
+	if (j == -1)
+		return (-1);
 	return (hexa_lenght);
 }
 
@@ -64,7 +70,11 @@ int	ft_printp(unsigned long ptr)
 	int	i;
 
 	if (ptr == 0)
-		return (0);
+	{
+		if (write(1, "0x0", 3) == -1)
+			return (-1);
+		return (3);
+	}
 	i = 2;
 	if (write(1, "0x", 2) == -1)
 		return (-1);

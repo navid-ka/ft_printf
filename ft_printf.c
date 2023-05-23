@@ -6,13 +6,13 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:42:54 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 13:20:51 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:23:14 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_check_format(const char *format, va_list args)
+static int	ft_check_format(const char *format, va_list args, int *ret)
 {
 	int	check;
 
@@ -26,7 +26,7 @@ static int	ft_check_format(const char *format, va_list args)
 	else if (*format == 'd' || *format == 'i')
 		check += ft_printid(va_arg(args, int));
 	else if (*format == 'u')
-		return (ft_printu(va_arg(args, unsigned int)));
+		check += ft_printu(va_arg(args, unsigned int));
 	else if (*format == 'x' || *format == 'X')
 	{
 		if (*format == 'x')
@@ -36,31 +36,50 @@ static int	ft_check_format(const char *format, va_list args)
 			check += ft_printhex(va_arg(args, unsigned int), \
 			"0123456789ABCDEF");
 	}
+	*ret = check;
 	return (check);
 }
 
-int	ft_printf(const char *format, ...)
+static int	ft_parse_format(const char *format, va_list args, int *ret, int i)
 {
-	va_list			args;
-	unsigned int	i;
-
-	i = 0;
-	va_start(args, format);
-
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (ft_strchr("cspdiuxX", *format))
-				i += ft_check_format(format, args);
-			else if (*format == '%')
-				i += ft_printc('%');
+			if (ft_strchr("cspdiuxX", *format)
+				&& ft_check_format(format, args, ret) != -1)
+				i += *ret;
+			else if (*format == '%' && ft_printc('%') != -1)
+				i++;
+			else
+				return (-1);
 		}
 		else
-			i += ft_printc(*format);
+		{
+			if (ft_printc(*format) != -1)
+				i++;
+			else
+				return (-1);
+		}
 		format++;
 	}
-	va_end(args);
+	*ret = i;
 	return (i);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list			args;
+	int				ret;
+
+	ret = 0;
+	va_start(args, format);
+	if (ft_parse_format(format, args, &ret, 0) == -1)
+	{
+		va_end(args);
+		return (-1);
+	}
+	va_end(args);
+	return (ret);
 }
