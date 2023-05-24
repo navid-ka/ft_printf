@@ -43,4 +43,9 @@ main: ${NAME} main.c
 	@cc main.c ${NAME} -I./includes/libft -L./includes/libft -lft -o printf
 	@printf "$(COLOR)Main program compiled successfully!$(COLOR_RESET)\n"
 
+git: fclean
+	git add .
+	git commit -m scanf""
+	git push
+
 .PHONY: clean all fclean re main
