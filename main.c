@@ -14,6 +14,7 @@ int	main(void)
 	printf("flag PUUU %p \n", &x);
 	ft_printf("flag PUUU %d \n", -10);
 	printf("flag PUUU %d \n", -10);
+	printf("flag PUUU %d \n", -10);
 
 
 /*printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% 
