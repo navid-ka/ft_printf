@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:48:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/05/23 18:07:04 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:26:03 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char	*ft_uitoa(unsigned int n)
 
 	nb = n;
 	count = ft_icount(nb);
-	arr = (char *)ft_calloc(count + 1, sizeof(char));
+	arr = ft_calloc(count + 1, sizeof(char));
 	if (!arr)
 		return (NULL);
 	while (count--)
