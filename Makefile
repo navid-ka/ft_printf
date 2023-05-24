@@ -45,7 +45,9 @@ main: ${NAME} main.c
 
 git: fclean
 	git add .
-	git commit -m "$m"
+	@echo "Comit:"
+	@read message; \
+	git commit -am "$$message"
 	git push
 
 .PHONY: clean all fclean re main
