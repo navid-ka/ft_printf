@@ -24,7 +24,7 @@ COLOR = \033[32m
 KAOMOJI_COMPILE = (╮°-°)╮┳━┳
 KAOMOJI_SUCCESS = (ノಠ益ಠ)ノ彡┻━┻
 
-%.o : %.c
+%.o : %.c libft.h
 	@printf "\r$(COLOR)Compiling Libft: $(KAOMOJI_COMPILE)$(COLOR_RESET) $< "
 	@cc -c ${CFLAGS} $< -o $@
 
