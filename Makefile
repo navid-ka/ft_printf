@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 INC = includes/
-LIB = $(INC)libft/
+LIB = includes/libft/
 LIBA = $(LIB)libft.a
 CFLAGS = -Wall -Wextra -Werror -I $(INC)
 PRINTF = ft_printf.h
@@ -14,15 +14,16 @@ COLOR = \033[32m
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
 KAOMOJI_REMOVE = (ノಠ益ಠ)ノ彡┻━┻
 
-${NAME}: ${OBJECTS}
-	make -C $(LIB) --no-print-directory
+${NAME}: ${OBJECTS} ${LIBA}
 	cp includes/libft/libft.a $(NAME)
 	${LIBF} ${NAME} ${OBJECTS}
 	@printf "$(COLOR)ft_printf library compiled successfully! $(KAOMOJI_SUCCESS)$(COLOR_RESET)\n"
+${LIBA}:
+	make -C $(LIB)
 
 all: ${NAME}
 
-%.o: %.c $(INC)%.h
+%.o: %.c includes/ft_printf.h
 	@printf "\r $(COLOR)Compiling ft_printf: $(COLOR_RESET) $< \n"
 	cc -c ${CFLAGS} $< -o $@
 
@@ -50,4 +51,4 @@ git: fclean
 	git commit -am "$$message"
 	git push
 
-.PHONY: clean all fclean re main
+.PHONY: clean all fclean re main ${LIBA}
